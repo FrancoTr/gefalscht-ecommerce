@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
     <>
-      <h1>TBD</h1>
+      <Navbar />
     </>
   );
 }
