@@ -28,10 +28,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <InputGroup>
-        <Button onClick={onDecrease} variant="outline-secondary">
+        <Button onClick={onDecrease} variant="outline-secondary" className="fw-bold">
           -
         </Button>
-        <Button onClick={onIncrease} variant="outline-secondary">
+        <Button onClick={onIncrease} variant="outline-secondary" className="fw-bold">
           +
         </Button>
         <Button onClick={onAddToCart} variant="dark">
