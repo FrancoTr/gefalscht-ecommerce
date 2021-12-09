@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import ItemCount from "./ItemCount";
+import { Card, ListGroup } from "react-bootstrap";
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
   return (
@@ -10,8 +11,15 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
         <Card.Text>{description}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroupItem variant="dark">SKU: {id}</ListGroupItem>
-        <ListGroupItem variant="dark">Price: {price}</ListGroupItem>
+        <ListGroup.Item variant="dark" className="fw-bold">
+          SKU: {id}
+        </ListGroup.Item>
+        <ListGroup.Item variant="dark" className="fw-bold">
+          Price: {price}
+        </ListGroup.Item>
+        <ListGroup.Item className="align-items-center" variant="secondary">
+          <ItemCount />
+        </ListGroup.Item>
       </ListGroup>
     </Card>
   );
