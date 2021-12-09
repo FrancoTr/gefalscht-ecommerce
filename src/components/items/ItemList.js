@@ -1,13 +1,12 @@
 import React from "react";
 import { CardGroup, Container, Row, Col } from "react-bootstrap";
 import Item from "./Item";
-import itemDataMock from "./ItemDataMock.json";
 
-const ItemList = () => {
+const ItemList = ({ items }) => {
   return (
     <Container>
       <Row xs={1} md={2} classNam="g-4">
-        {itemDataMock.map((item) => {
+        {items.map((item) => {
           return (
             <Col>
               <Item
