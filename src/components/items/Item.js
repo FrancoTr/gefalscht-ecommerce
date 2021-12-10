@@ -4,8 +4,8 @@ import { Card, ListGroup } from "react-bootstrap";
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
   return (
-    <Card border="dark" bg="dark" text="light">
-      <Card.Img variant="top" src={pictureUrl} />
+    <Card border="dark" bg="dark" text="light" style={{ height: "auto" }}>
+      <Card.Img variant="top" src={pictureUrl} style={{ maxHeight: "50%" }} />
       <Card.Body>
         <Card.Title as="h1">{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
@@ -17,7 +17,7 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
         <ListGroup.Item variant="dark" className="fw-bold">
           Price: {price}
         </ListGroup.Item>
-        <ListGroup.Item className="align-items-center" variant="secondary">
+        <ListGroup.Item variant="secondary">
           <ItemCount />
         </ListGroup.Item>
       </ListGroup>

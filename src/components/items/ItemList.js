@@ -5,10 +5,10 @@ import Item from "./Item";
 const ItemList = ({ items }) => {
   return (
     <Container>
-      <Row xs={1} md={2} classNam="g-4">
+      <Row>
         {items.map((item) => {
           return (
-            <Col>
+            <Col md="4">
               <Item
                 id={item.id}
                 title={item.title}
