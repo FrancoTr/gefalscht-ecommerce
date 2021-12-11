@@ -1,5 +1,5 @@
 import React from "react";
-import { CardGroup, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Item from "./Item";
 
 const ItemList = ({ items }) => {
@@ -8,7 +8,7 @@ const ItemList = ({ items }) => {
       <Row>
         {items.map((item) => {
           return (
-            <Col md="4">
+            <Col md="4" key={item.id}>
               <Item
                 id={item.id}
                 title={item.title}
