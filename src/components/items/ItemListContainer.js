@@ -1,29 +1,39 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import itemDataMock from "./ItemDataMock.json";
-
-const promiseMock = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(itemDataMock);
-    }, 3000);
-  });
-};
 
 const ItemListContainer = (props) => {
   const [itemsData, setItemsData] = useState([]);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    setError(null);
+    try {
+      const response = await fetch("https://fakestoreapi.com/products");
+      if (!response.ok) {
+        throw new Error("Bad request");
+      }
+      const data = await response.json();
+      setItemsData(data);
+    } catch (error) {
+      setError(error.message);
+    }
+  }
 
   useEffect(() => {
-    promiseMock().then((data) => {
-      setItemsData(data);
-    });
+    fetchData();
   }, []);
 
-  /*function onAdd(addedQuantity) {
-    console.log(`added ${addedQuantity} items!`);
-  }*/
+  let content = <h1 className="text-center">Loading...</h1>;
 
-  return <ItemList items={itemsData} />;
+  if (itemsData.length > 0) {
+    content = <ItemList items={itemsData} />;
+  }
+
+  if (error) {
+    content = <p className="text-center">{error}</p>;
+  }
+
+  return <section>{content}</section>;
 };
 
 export default ItemListContainer;

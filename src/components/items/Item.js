@@ -1,26 +1,19 @@
 import React from "react";
-import ItemCount from "./ItemCount";
-import { Card, ListGroup } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
-const Item = ({ id, title, description, price, pictureUrl }) => {
+const Item = ({ id, title, description, price, image }) => {
   return (
-    <Card border="dark" bg="dark" text="light" style={{ height: "auto" }}>
-      <Card.Img variant="top" src={pictureUrl} style={{ maxHeight: "50%" }} />
+    <Card border="dark" style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title as="h1">{title}</Card.Title>
+        <Card.Title className="fw-bold text-center">{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
+        <div className="text-center">
+          <Button size="lg" variant="dark">
+            See Details
+          </Button>
+        </div>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item variant="dark" className="fw-bold">
-          SKU: {id}
-        </ListGroup.Item>
-        <ListGroup.Item variant="dark" className="fw-bold">
-          Price: {price}
-        </ListGroup.Item>
-        <ListGroup.Item variant="secondary">
-          <ItemCount />
-        </ListGroup.Item>
-      </ListGroup>
     </Card>
   );
 };

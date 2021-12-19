@@ -5,16 +5,16 @@ import Item from "./Item";
 const ItemList = ({ items }) => {
   return (
     <Container>
-      <Row>
+      <Row className="mx-auto my-4">
         {items.map((item) => {
           return (
-            <Col md="4" key={item.id}>
+            <Col key={item.id}>
               <Item
                 id={item.id}
                 title={item.title}
                 description={item.description}
                 price={item.price}
-                pictureUrl={item.pictureUrl}
+                image={item.image}
               />
             </Col>
           );
