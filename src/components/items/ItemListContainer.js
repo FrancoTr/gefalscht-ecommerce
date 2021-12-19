@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
+import { Spinner } from "react-bootstrap";
 
 const ItemListContainer = (props) => {
   const [itemsData, setItemsData] = useState([]);
@@ -23,7 +24,14 @@ const ItemListContainer = (props) => {
     fetchData();
   }, []);
 
-  let content = <h1 className="text-center">Loading...</h1>;
+  //let content = <h1 className="text-center">Loading...</h1>;
+  let content = (
+    <div className="d-flex justify-content-center my-4">
+      <Spinner animation="border" size="lg" variant="dark" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
+  );
 
   if (itemsData.length > 0) {
     content = <ItemList items={itemsData} />;
