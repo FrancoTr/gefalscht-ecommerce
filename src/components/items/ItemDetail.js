@@ -4,7 +4,6 @@ import ItemCount from "./ItemCount";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const ItemDetail = (props) => {
-  console.log(props);
   return (
     <Card border="dark" style={{ width: "30rem" }}>
       <Card.Img variant="dark" src={props.product.image} />
