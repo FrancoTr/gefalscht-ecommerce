@@ -14,8 +14,6 @@ const ItemDetail = (props) => {
       <ListGroup className="list-group-flush fw-bold">
         <ListGroupItem>{`Price: $${props.product.price}`}</ListGroupItem>
         <ListGroupItem>{`Category: ${props.product.category}`}</ListGroupItem>
-        <ListGroupItem>{`Rating: ${props.product.rating.rate}/5`}</ListGroupItem>
-        <ListGroupItem>{`Stock: ${props.product.rating.count} Units`}</ListGroupItem>
       </ListGroup>
       <Card.Body>
         <ItemCount />

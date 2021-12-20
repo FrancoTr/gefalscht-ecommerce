@@ -14,7 +14,7 @@ const ItemDetailContainer = (props) => {
   useEffect(() => {
     getItem();
   }, []);
-  console.log(itemData);
+
   return (
     <Container>
       <ItemDetail product={itemData} />
