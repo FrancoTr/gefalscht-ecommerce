@@ -1,14 +1,16 @@
 import React from "react";
+import NavCategories from "./NavCategories";
 import { Navbar as Navbarboots, Container, Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import logo from "../../images/fakeicon.svg";
 import CartWidget from "../cart/CartWidget";
 
 const Navbar = () => {
   return (
-    <>
-      <Navbarboots expand="lg" bg="dark" variant="dark">
-        <Container>
-          <Navbarboots.Brand href="/">
+    <Navbarboots expand="lg" bg="dark" variant="dark" sticky="top">
+      <Container>
+        <LinkContainer to="/">
+          <Navbarboots.Brand>
             <img
               alt="logo"
               src={logo}
@@ -18,21 +20,15 @@ const Navbar = () => {
             />{" "}
             Gefalscht E-commerce
           </Navbarboots.Brand>
-        </Container>
+        </LinkContainer>
+      </Container>
+      <NavCategories />
+      <Nav>
         <Container>
-          <Nav>
-            <Nav.Link>Category #1</Nav.Link>
-            <Nav.Link>Category #2</Nav.Link>
-            <Nav.Link>Category #3</Nav.Link>
-          </Nav>
+          <CartWidget />
         </Container>
-        <Nav>
-          <Container>
-            <CartWidget />
-          </Container>
-        </Nav>
-      </Navbarboots>
-    </>
+      </Nav>
+    </Navbarboots>
   );
 };
 
