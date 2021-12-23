@@ -9,7 +9,7 @@ const NavCategories = () => {
         <LinkContainer to="/category/electronics">
           <Nav.Link>Electronics</Nav.Link>
         </LinkContainer>
-        <LinkContainer to="/category/jewelry">
+        <LinkContainer to="/category/jewelery">
           <Nav.Link>Jewelry</Nav.Link>
         </LinkContainer>
         <LinkContainer to="/category/men's clothing">
