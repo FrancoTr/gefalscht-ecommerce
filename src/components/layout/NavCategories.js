@@ -6,17 +6,17 @@ const NavCategories = () => {
   return (
     <Container>
       <Nav>
-        <LinkContainer to="category/1">
-          <Nav.Link>Men's Clothing</Nav.Link>
+        <LinkContainer to="/category/electronics">
+          <Nav.Link>Electronics</Nav.Link>
         </LinkContainer>
-        <LinkContainer to="category/2">
-          <Nav.Link>Women's Clothing</Nav.Link>
-        </LinkContainer>
-        <LinkContainer to="category/3">
+        <LinkContainer to="/category/jewelry">
           <Nav.Link>Jewelry</Nav.Link>
         </LinkContainer>
-        <LinkContainer to="category/4">
-          <Nav.Link>Electronics</Nav.Link>
+        <LinkContainer to="/category/men's clothing">
+          <Nav.Link>Men's Clothing</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/category/women's clothing">
+          <Nav.Link>Women's Clothing</Nav.Link>
         </LinkContainer>
       </Nav>
     </Container>
