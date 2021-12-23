@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-const Item = ({ id, title, description, price, image }) => {
+const Item = ({ title, description, image }) => {
   return (
     <Card border="dark" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={image} />
