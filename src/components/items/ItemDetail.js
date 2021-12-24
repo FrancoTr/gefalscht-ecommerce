@@ -3,17 +3,17 @@ import ItemCount from "./ItemCount";
 
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
-const ItemDetail = (props) => {
+const ItemDetail = ({ product }) => {
   return (
     <Card border="dark" style={{ width: "30rem" }}>
-      <Card.Img variant="dark" src={props.product.image} />
+      <Card.Img variant="dark" src={product.image} />
       <Card.Body>
-        <Card.Title className="fw-bold">{props.product.title}</Card.Title>
-        <Card.Text>{props.product.description}</Card.Text>
+        <Card.Title className="fw-bold">{product.title}</Card.Title>
+        <Card.Text>{product.description}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush fw-bold">
-        <ListGroupItem>{`Price: $${props.product.price}`}</ListGroupItem>
-        <ListGroupItem>{`Category: ${props.product.category}`}</ListGroupItem>
+        <ListGroupItem>{`Price: $${product.price}`}</ListGroupItem>
+        <ListGroupItem>{`Category: ${product.category}`}</ListGroupItem>
       </ListGroup>
       <Card.Body>
         <ItemCount />
