@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { InputGroup, Button, Badge } from "react-bootstrap";
 
-const ItemCount = ({ initial, onAdd }) => {
-  const [itemQuantity, setItemQuantity] = useState(initial);
+const ItemCount = ({ onAdd }) => {
+  const [itemQuantity, setItemQuantity] = useState(0);
 
   function onIncrease() {
     setItemQuantity(itemQuantity + 1);
