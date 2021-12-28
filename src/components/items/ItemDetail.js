@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemCount from "./ItemCount";
-
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 const ItemDetail = ({ product }) => {
+  const [addedQuantity, setAddedQuantity] = useState(0);
+  const [showEndTransactionButton, setShowEndTransactionButton] = useState(false);
+
+  const onAdd = (itemQuantity) => {
+    setAddedQuantity(addedQuantity);
+    setShowEndTransactionButton(true);
+  };
   return (
     <Card border="dark" style={{ width: "30rem" }}>
       <Card.Img variant="dark" src={product.image} />
@@ -16,7 +23,15 @@ const ItemDetail = ({ product }) => {
         <ListGroupItem>{`Category: ${product.category}`}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <ItemCount />
+        {showEndTransactionButton ? (
+          <Card.Body>
+            <LinkContainer to="/cart">
+              <Button variant="dark">End Transaction</Button>
+            </LinkContainer>
+          </Card.Body>
+        ) : (
+          <ItemCount onAdd={onAdd} />
+        )}
       </Card.Body>
     </Card>
   );
