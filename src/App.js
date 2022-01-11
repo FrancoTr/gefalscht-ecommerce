@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import CartContext from "./store/CartContext";
+import CartProvider from "./store/CartContext";
 import Navbar from "./components/layout/Navbar";
 import ItemListContainer from "./components/items/ItemListContainer";
 import ItemDetailContainer from "./components/items/ItemDetailContainer";
@@ -8,7 +8,7 @@ import Cart from "./components/cart/Cart";
 
 function App() {
   return (
-    <CartContext.Provider value={{}}>
+    <CartProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
